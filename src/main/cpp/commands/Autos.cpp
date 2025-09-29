@@ -8,6 +8,7 @@
 
 #include "commands/ExampleCommand.h"
 
-frc2::CommandPtr autos::ExampleAuto(Drivetrain* drivetrain) {
-  return frc2::cmd::Run([drivetrain] { drivetrain->TankDrive(0.5, 0.5); });
+frc2::CommandPtr autos::ExampleAuto(ExampleSubsystem* subsystem) {
+  return frc2::cmd::Sequence(subsystem->ExampleMethodCommand(),
+                             ExampleCommand(subsystem).ToPtr());
 }
