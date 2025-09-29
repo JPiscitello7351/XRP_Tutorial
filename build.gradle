@@ -9,7 +9,7 @@ wpi.sim.addGui().defaultEnabled = true
 wpi.sim.addDriverstation()
 
 //Sets the XRP Client Host
-wpi.sim.envVar("XRP-1756-01", "192.168.42.1")
+wpi.sim.envVar("HALSIMXRP_HOST", "192.168.42.1")
 wpi.sim.addXRPClient().defaultEnabled = true
 
 model {
@@ -54,9 +54,4 @@ model {
             wpi.cpp.deps.googleTest(it)
         }
     }
-    toolChains {
-    visualCpp(VisualCpp) {
-        installDir 'C:/Program Files/Microsoft Visual Studio/2022/Community' // << VS install directory
-    }
-}
 }
