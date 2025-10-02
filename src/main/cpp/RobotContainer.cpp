@@ -18,19 +18,10 @@ RobotContainer::RobotContainer() {
 
 void RobotContainer::ConfigureBindings() {
   // Configure your trigger bindings here
-  m_drivetrain.SetDefaultCommand(frc2::RunCommand(
-      [this] {
-        m_drivetrain.TankDrive(
-            -m_driverController.GetLeftY(),
-            -m_driverController.GetRightY());
-      },
-      {&m_drivetrain}));
-
-  
   
 }
 
 frc2::CommandPtr RobotContainer::GetAutonomousCommand() {
   // An example command will be run in autonomous
-  return autos::ExampleAuto(&m_drivetrain);
+  return autos::ExampleAuto(&m_subsystem);
 }
